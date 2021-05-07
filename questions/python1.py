@@ -267,7 +267,6 @@ def eight(arg1):
 
 def nine(input):
 	a = input.lower()
-	firstb = a.index("bert")
 	edit = a.replace("bert", "*")
 	firsti = edit.index("*")
 	if edit.count("*") >1:
@@ -315,7 +314,6 @@ def ten(input):
 			namelist.append(a[i])
 			print(a[0])
 		i +=4
-	print(namelist)
 	
 	for i in namelist:
 		if i in antidupe:
