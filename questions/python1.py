@@ -270,20 +270,17 @@ print(eight("23 54"))
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def nine(input):
-	# print (input.index("bert"))
 	a = input.lower()
 	firstb = a.index("bert")
 	edit = a.replace("bert", "*")
-	# print(edit)
 	firsti = edit.index("*")
 	if edit.count("*") >1:
 		secondi = edit.index("*", firsti+1)
 		y = edit[firsti+1:secondi]
-		# print(y)
 		return y
 	else:
 		return ""
-print(nine("xxbertyy"))
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -313,7 +310,35 @@ print(nine("xxbertyy"))
 	# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
 def ten(input):
-	return []
+	a = input.split(",")
+	# print (a)
+	namelist = []
+	antidupe = []
+	i=0
+	while i < len(a):
+		if a[i+2]=="False":
+			namelist.append(a[i])
+			print(a[0])
+		i +=4
+	print(namelist)
+	
+	for i in namelist:
+		if i in antidupe:
+			continue
+		else:
+			antidupe.append(i)
+	
+	# if len(namelist)>0:
+	# 	for i in range(len(namelist)):
+	# 		count = namelist.count(namelist[i])
+	# 		if count > 1:
+	# 			continue
+	# 		else:
+	# 			antidupe.append(namelist[i])
+
+	return antidupe
+
+print(ten("Bert,boolean.py,False,1447,Bert,conditions.py,False,1318,Jeff,loops.py,False,1445"))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
