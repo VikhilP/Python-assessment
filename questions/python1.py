@@ -88,7 +88,13 @@ def two(arg1):
 	# How do we ignore case in a String? help(str) may offer some insight.
 
 def three(input):
-    return 0
+	vowels = "aeiou"
+	sum = 0
+	a = input.lower()
+	for i in range(len(a)):
+		if a[i] in vowels:
+			sum+=1
+	return sum
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -111,7 +117,16 @@ def three(input):
 
 
 def four(input):
-    return False
+	flag = False
+
+	for i in range (len(input)):
+		if input[i] == "c":
+			if input[i+1]=="e" and input[i+2]=="i":
+				flag = True
+		elif input[i]=="i" and input[i-1]!= "c": 
+			if input[i+1]=="e":
+				flag = True
+	return flag
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -131,7 +146,11 @@ def four(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def five(input):
-	return 1
+	sum = 1
+	for i in range(1,input+1):
+		sum = i * sum
+		print(sum)
+	return sum
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -153,8 +172,13 @@ def five(input):
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def six(string, int, char):
+	if int <0:
+		return False
+	elif int > len(string):
+		return False
+	elif string[int-1].lower()==char:
+		return True
 	return False
-
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 7>
