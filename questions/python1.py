@@ -200,8 +200,13 @@ def six(string, int, char):
 	# Take a look at the documentation for Strings, List and range.
 
 def seven(inputString, char):
+	a = inputString.replace(" ", "")
+	print(a)
+	if char in a:
+		return (a.index(char)+1)
 	return -1
 
+# print(seven("This is a Sentence","S"))
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 8>
@@ -227,8 +232,19 @@ def seven(inputString, char):
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def eight(arg1):
-	return 0
+	a = [int(x) for x in arg1.split()]
+	highest = 0
+	for i in range(len(a)):
+		sum = 0
+		b = []
+		digits = [int(x) for x in str(a[i])]
+		for j in range(len(digits)):
+			sum += digits[j]
+		if sum > highest:
+			highest = sum
 
+	return highest
+print(eight("23 54"))
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 9>
@@ -254,7 +270,20 @@ def eight(arg1):
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def nine(input):
-	return ""
+	# print (input.index("bert"))
+	a = input.lower()
+	firstb = a.index("bert")
+	edit = a.replace("bert", "*")
+	# print(edit)
+	firsti = edit.index("*")
+	if edit.count("*") >1:
+		secondi = edit.index("*", firsti+1)
+		y = edit[firsti+1:secondi]
+		# print(y)
+		return y
+	else:
+		return ""
+print(nine("xxbertyy"))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
