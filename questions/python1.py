@@ -120,10 +120,10 @@ def four(input):
 	flag = False
 
 	for i in range (len(input)):
-		if input[i] == "c":
+		if input[i] == "c"and (i+2)<len(input):
 			if input[i+1]=="e" and input[i+2]=="i":
 				flag = True
-		elif input[i]=="i" and input[i-1]!= "c": 
+		elif input[i]=="i" and input[i-1]!= "c" and i>0: 
 			if input[i+1]=="e":
 				flag = True
 	return flag
@@ -149,7 +149,6 @@ def five(input):
 	sum = 1
 	for i in range(1,input+1):
 		sum = i * sum
-		print(sum)
 	return sum
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
@@ -201,7 +200,6 @@ def six(string, int, char):
 
 def seven(inputString, char):
 	a = inputString.replace(" ", "")
-	print(a)
 	if char in a:
 		return (a.index(char)+1)
 	return -1
@@ -236,7 +234,6 @@ def eight(arg1):
 	highest = 0
 	for i in range(len(a)):
 		sum = 0
-		b = []
 		digits = [int(x) for x in str(a[i])]
 		for j in range(len(digits)):
 			sum += digits[j]
@@ -244,7 +241,6 @@ def eight(arg1):
 			highest = sum
 
 	return highest
-print(eight("23 54"))
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 9>
@@ -311,7 +307,6 @@ def nine(input):
 
 def ten(input):
 	a = input.split(",")
-	# print (a)
 	namelist = []
 	antidupe = []
 	i=0
@@ -327,18 +322,8 @@ def ten(input):
 			continue
 		else:
 			antidupe.append(i)
-	
-	# if len(namelist)>0:
-	# 	for i in range(len(namelist)):
-	# 		count = namelist.count(namelist[i])
-	# 		if count > 1:
-	# 			continue
-	# 		else:
-	# 			antidupe.append(namelist[i])
 
 	return antidupe
-
-print(ten("Bert,boolean.py,False,1447,Bert,conditions.py,False,1318,Jeff,loops.py,False,1445"))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
